@@ -5,40 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구로동광교회 교육부</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-    /* 모바일 (768px 이하) */
-@media (max-width: 768px) {
-    
-    nav {
-        padding: 15px 20px;
-    }
-
-    .logo {
-        font-size: 16px;
-        white-space: nowrap;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .leaders-grid {
-        grid-template-columns: 1fr !important;
-        padding: 0 20px;
-    }
-
-    .leader-card {
-        max-width: 350px;
-        margin: 0 auto;
-    }
-}
-
-/* 아이패드 (769px ~ 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .leaders-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-}
-    <style>
+<style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
@@ -301,7 +268,35 @@
         }
 
         footer span { color: #c9a84c; }
-    </style>
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+    .logo {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+    .nav-links {
+        display: none;
+    }
+    .leaders-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 20px;
+    }
+    .leader-card {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+/* 아이패드 (769px ~ 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .leaders-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}    
+</style>
 </head>
 <body>
 
