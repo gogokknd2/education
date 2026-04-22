@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구로동광교회 교육부</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10,10,10,0.95);
+            border-bottom: 1px solid #c9a84c;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #c9a84c;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            margin-left: 40px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: #c9a84c; }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            color: #c9a84c;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #aaaaaa;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .hero-btn {
+            padding: 16px 48px;
+            border: 2px solid #c9a84c;
+            color: #c9a84c;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 3px;
+            transition: all 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #c9a84c;
+            color: #0a0a0a;
+        }
+
+        .about {
+            padding: 120px 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #c9a84c;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #f0f0f0;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: #c9a84c;
+            margin: 0 auto 40px;
+        }
+
+        .about p {
+            font-size: 17px;
+            color: #aaaaaa;
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .worship {
+            background: #111111;
+            padding: 120px 60px;
+            text-align: center;
+        }
+
+        .worship-card {
+            display: inline-block;
+            border: 1px solid #c9a84c;
+            padding: 60px 80px;
+            margin-top: 50px;
+        }
+
+        .worship-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #c9a84c;
+            margin-bottom: 16px;
+        }
+
+        .worship-card p {
+            font-size: 16px;
+            color: #aaaaaa;
+            letter-spacing: 2px;
+        }
+
+        /* 사역자 섹션 */
+        .leaders {
+            padding: 120px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .leader-card {
+            border: 1px solid #222222;
+            padding: 40px 30px;
+            transition: border-color 0.3s;
+        }
+
+        .leader-card:hover {
+            border-color: #c9a84c;
+        }
+
+        .leader-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #c9a84c;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .leader-card h3 {
+            font-size: 18px;
+            color: #f0f0f0;
+            margin-bottom: 8px;
+        }
+
+        .leader-card .role {
+            font-size: 13px;
+            color: #c9a84c;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .leader-card .dept {
+            font-size: 13px;
+            color: #666666;
+        }
+
+        .location {
+            background: #111111;
+            padding: 120px 60px;
+            text-align: center;
+        }
+
+        .location-info {
+            margin-top: 50px;
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #c9a84c;
+            padding: 50px 60px;
+        }
+
+        .location-info p {
+            font-size: 16px;
+            color: #aaaaaa;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .location-info span {
+            color: #c9a84c;
+            margin-right: 12px;
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 40px;
+            background: #c9a84c;
+            color: #0a0a0a;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            transition: opacity 0.3s;
+        }
+
+        .map-btn:hover { opacity: 0.8; }
+
+        footer {
+            padding: 40px 60px;
+            text-align: center;
+            border-top: 1px solid #222222;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #444444;
+            letter-spacing: 1px;
+        }
+
+        footer span { color: #c9a84c; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">구로동광교회 교육부</div>
+        <div class="nav-links">
+            <a href="#about">소개</a>
+            <a href="#worship">예배</a>
+            <a href="#leaders">사역자</a>
+            <a href="#location">오시는 길</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p>구로동광교회 교육부</p>
+            <h1>말씀으로<br>세워가는<br>다음세대</h1>
+            <br>
+            <a href="#about" class="hero-btn">EXPLORE</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <p class="section-label">ABOUT US</p>
+        <h2 class="section-title">말씀 중심,<br>체계적인 신앙 교육</h2>
+        <div class="divider"></div>
+        <p>
+            구로동광교회 교육부는 하나님의 말씀을 중심으로<br>
+            다음 세대를 체계적으로 세워가는 사역을 감당합니다.<br><br>
+            유아부터 청소년까지, 각 연령에 맞는 말씀 교육을 통해<br>
+            하나님을 깊이 알아가고 신앙의 뿌리를 내리도록 돕습니다.
+        </p>
+    </section>
+
+    <section class="worship" id="worship">
+        <p class="section-label">WORSHIP</p>
+        <h2 class="section-title">예배 안내</h2>
+        <div class="divider"></div>
+        <div class="worship-card">
+            <h3>주일 예배</h3>
+            <p>매주 일요일 · 오전 11시</p>
+            <p style="margin-top:12px; font-size:14px;">비전센터</p>
+        </div>
+    </section>
+
+    <section class="leaders" id="leaders">
+        <p class="section-label">OUR TEAM</p>
+        <h2 class="section-title">사역자 소개</h2>
+        <div class="divider"></div>
+        <div class="leaders-grid">
+
+            <div class="leader-card">
+                <img src="김태연.jpg" alt="김태연 강도사" class="leader-photo">
+                <h3>김태연 강도사</h3>
+                <p class="role">담당 총괄 · 청소년부</p>
+                <p class="dept">교육부 전체 총괄</p>
+            </div>
+
+            <div class="leader-card">
+                <img src="장영옥.jpg" alt="장영옥 전도사" class="leader-photo">
+                <h3>장영옥 전도사</h3>
+                <p class="role">유아부</p>
+                <p class="dept">유아부 담당</p>
+            </div>
+
+            <div class="leader-card">
+                <img src="김다혜.jpg" alt="김다혜 전도사" class="leader-photo">
+                <h3>김다혜 전도사</h3>
+                <p class="role">유치부</p>
+                <p class="dept">유치부 담당</p>
+            </div>
+
+            <div class="leader-card">
+                <img src="이시나.jpg" alt="이시나 전도사" class="leader-photo">
+                <h3>이시나 전도사</h3>
+                <p class="role">초등 1부</p>
+                <p class="dept">초등 1부 담당</p>
+            </div>
+
+            <div class="leader-card">
+                <img src="안새벽.jpg" alt="안새벽 전도사" class="leader-photo">
+                <h3>안새벽 전도사</h3>
+                <p class="role">초등 2부</p>
+                <p class="dept">초등 2부 담당</p>
+            </div>
+
+            <div class="leader-card">
+                <img src="임미진.jpg" alt="임미진 전도사" class="leader-photo">
+                <h3>임미진 전도사</h3>
+                <p class="role">초등 3부</p>
+                <p class="dept">초등 3부 담당</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="location" id="location">
+        <p class="section-label">LOCATION</p>
+        <h2 class="section-title">오시는 길</h2>
+        <div class="divider"></div>
+        <div class="location-info">
+            <p><span>📍</span>서울 구로구 구로중앙로28길 62 동광교회</p>
+            <p><span>🕐</span>주일 오전 11시 · 비전센터</p>
+            <a href="https://map.naver.com/v5/search/구로동광교회" target="_blank" class="map-btn">네이버 지도로 보기</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 <span>구로동광교회 교육부</span> · All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
