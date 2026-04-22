@@ -270,6 +270,34 @@
             color: #444444;
             letter-spacing: 1px;
         }
+footer span { color: #c9a84c; }
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+    .logo {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+    .nav-links {
+        display: none;
+    }
+    .leaders-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 15px;
+        gap: 20px;
+    }
+    .leader-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+    p, h1, h2, h3 {
+        word-break: keep-all;
+        word-wrap: break-word;
+    }
+}
 
         footer span { color: #c9a84c; }
 /* 모바일 (768px 이하) */
