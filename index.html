@@ -293,45 +293,12 @@ footer span { color: #c9a84c; }
         margin: 0 auto;
     }
     p, h1, h2, h3 {
-        
-
-        footer span { color: #c9a84c; }
-/* 모바일 (768px 이하) */
-@media (max-width: 768px) {
-    nav {
-        padding: 15px 20px;
-    }
-    .logo {
-        font-size: 16px;
-        white-space: nowrap;
-    }
-    .nav-links {
-        display: none;
-    }
-    .leaders-grid {
-        grid-template-columns: 1fr !important;
-        padding: 0 15px;
-        gap: 20px;
-    }
-    .leader-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 auto;
-                .leader-card {
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 auto;
-        }
-        
-        /* ← 여기에 추가! */
-        p, h1, h2, h3 {
-            word-break: keep-all;
-            word-wrap: break-word;
-        }  
-    }  /* 297번 줄 } */
+        word-break: keep-all;
+        word-wrap: break-word;
     }
 }
 /* 아이패드 (769px ~ 1024px) */
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .leaders-grid {
         grid-template-columns: repeat(3, 1fr) !important;
